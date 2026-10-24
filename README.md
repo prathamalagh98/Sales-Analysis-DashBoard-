@@ -1,31 +1,52 @@
 # Sales Analysis Dashboard
 
-Python project based on Unit I, II, III.
-Tech: Python, NumPy, Pandas, Matplotlib, Seaborn, Tkinter.
+A Python-based project developed according to Units I, II, and III of the syllabus.
 
-## Run kaise kare
-1. Python 3.9+ install hona chahiye (Tkinter Windows me saath aata hai).
-2. Terminal is folder me kholo:
-       pip install -r requirements.txt
-       python app.py
-   (Pehli baar data/sales_data.csv apne aap ban jati hai.
-    Alag se banane ke liye: python generate_data.py)
+**Technologies:** Python, NumPy, Pandas, Matplotlib, Seaborn, Tkinter
 
-## Files
-| File | Kaam | Syllabus |
-|------|------|----------|
-| generate_data.py | NumPy se random sales data, missing values ke saath | Unit 2 (NumPy) |
-| analyzer.py | SalesAnalyzer class: load, clean (median fill), filter, stats, lambda/map/filter/reduce | Unit 1 + 2 |
-| charts.py | Line, area, bar, pie, histogram, Seaborn heatmap | Unit 2 + 3 |
-| app.py | Tkinter GUI: menu, popup menu, buttons, dropdown, key bindings, chart embed | Unit 3 |
+## How to Run
+
+1. Make sure Python 3.9 or later is installed. (Tkinter is included with Python on Windows.)
+2. Open a terminal in the project folder and run:
+
+   ```bash
+   pip install -r requirements.txt
+   python app.py
+   ```
+
+   The `data/sales_data.csv` file is automatically generated the first time the application runs.
+
+   To generate the sample data separately, run:
+
+   ```bash
+   python generate_data.py
+   ```
+
+## Project Files
+
+| File | Description | Syllabus Unit |
+|---|---|---|
+| `generate_data.py` | Generates random sales data using NumPy, including missing values. | Unit II (NumPy) |
+| `analyzer.py` | Contains the `SalesAnalyzer` class for loading and cleaning data (using median imputation), filtering, statistical analysis, and operations using `lambda`, `map()`, `filter()`, and `reduce()`. | Units I and II |
+| `charts.py` | Creates line charts, area charts, bar charts, pie charts, histograms, and Seaborn heatmaps. | Units II and III |
+| `app.py` | Implements the Tkinter GUI with menus, popup menus, buttons, dropdowns, keyboard shortcuts, and embedded charts. | Unit III |
 
 ## Features
-- Welcome screen (Start button ya Enter key). Apna naam/UID app.py ke upar STUDENT_NAME aur STUDENT_UID me badlo
-- File menu: Open CSV (Ctrl+O), Generate Sample Data, Save Chart PNG (Ctrl+S), Exit (Ctrl+Q)
-- Category / Region filter, sab stats aur chart us filter ke hisaab se update hote hain
-- Charts menu / buttons: Trend (line), Area, Bar (category/region), Pie (segment/category), Histogram, Heatmap
-- Chart par right-click: popup menu
-- pack, grid aur place teeno geometry managers use hue hain
 
-## Apna CSV use karna ho to columns ye hone chahiye
-Date, Category, Region, Segment, Quantity, Revenue
+- **Welcome Screen:** Start the application using the Start button or the Enter key.
+- **Student Details:** Update `STUDENT_NAME` and `STUDENT_UID` at the top of `app.py`.
+- **File Menu:**
+  - Open CSV: `Ctrl + O`
+  - Generate Sample Data
+  - Save Chart as PNG: `Ctrl + S`
+  - Exit: `Ctrl + Q`
+- **Data Filtering:** Filter sales data by category or region. All statistics and charts update according to the selected filters.
+- **Charts:** View trend (line), area, bar (category/region), pie (segment/category), histogram, and heatmap visualizations.
+- **Context Menu:** Right-click on a chart to access the popup menu.
+- **Tkinter Layouts:** Uses all three geometry managers: `pack`, `grid`, and `place`.
+
+## Using Your Own CSV File
+
+To use your own sales dataset, ensure that it contains the following columns:
+
+`Date, Category, Region, Segment, Quantity, Revenue`
